@@ -1,0 +1,45 @@
+ ## ID - auto generated or manual alpha numeric, must be unique across RLC
+id: sample_bash_bot
+
+## Name - human readable name (e.g., Install MongoDB, Change JIRA password...)
+name: Test BOT Using Shell Script
+
+## Desc - Few line brief about the BOT and its characteristics.
+desc: shows only messages for test purpose.
+
+## Category -> Check, Run, Meta, Predict...
+functionality: Sample
+action: run
+
+## Type ->  Chef, Script, UI, etc...
+type: script
+## Manual Execution Time is in Minutes.
+manualExecutionTime: 5
+## Sample input form
+##    form    - its form based input
+##    name    - variable name
+##    label   - label text
+##    type    - text, password, file, list
+##    default - sample grayed text to help user
+#subtype -> software, docker, cft, arm, composite for blueprint,
+# None for others
+input:
+  - form:
+    - name: instanceIP
+      label: Instance IP
+      type: text
+      default: 172.168.1.2 
+
+execution: 
+  - 
+    os: ubuntu
+    stage: script
+    entrypoint: sample_bash_bot.sh
+    param: ${instanceIP}
+    type: bash
+
+output:
+   logs:
+    - stdout
+   msgs:
+        text: "shows message for test purpose."
