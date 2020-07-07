@@ -5,16 +5,16 @@ id: sample_python_bot
 name: Test BOT Using Python Script
 
 ## Desc - Few line brief about the BOT and its characteristics.
-desc: shows only messages for test purpose.
+desc: Test BOT Using Python Script.
 
 ## Category -> Check, Run, Meta, Predict...
-functionality: Sample
+functionality: Service Management
 action: run
 
 ## Type ->  Chef, Script, UI, etc...
 type: script
 ## Manual Execution Time is in Minutes.
-manualExecutionTime: 5
+manualExecutionTime: 10
 ## Sample input form
 ##    form    - its form based input
 ##    name    - variable name
@@ -25,21 +25,42 @@ manualExecutionTime: 5
 # None for others
 input:
   - form:
-    - name: instanceIP
-      label: Instance IP
+    - name: providerType
+      label: Provider type 
       type: text
-      default: 172.168.1.2 
+      default: Github
+    - name: sysid
+      label: Task SysId
+      type: text
+      default: 97265bfcdb7d1414c972dda5ca96196s
+    - name: task
+      label: Task Number
+      type: text
+      default: TASK0186317
+    - name: snowUrl
+      label: Servicenow Url
+      type: text
+      default: https://relevancelabincdemo1.service-now.com
+    - name: snowUserName
+      label: Servicenow UserName
+      type: text
+      default: admin
+    - name: snowPassword
+      label: Servicenow Password
+      type: password
+      default: Pass@123
 
 execution: 
   - 
-    os: windows
+    os: ubuntu
     stage: script
     entrypoint: sample_python_bot.py
-    param: ${instanceIP}
+    param: ${providerType} ${sysid} ${task} ${snowUrl} ${snowUserName} ${snowPassword}
     type: python
 
 output:
    logs:
     - stdout
    msgs:
-        text: "shows messages for test purpose."
+        text: "Test BOT Using Python Script."
+              
