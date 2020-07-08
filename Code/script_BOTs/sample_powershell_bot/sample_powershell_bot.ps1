@@ -25,8 +25,7 @@ try{
 	$taskIdJson = @{"taskId" = $taskId} 
 	$json = ($taskIdJson| ConvertTo-Json)
 	Write-Logger $json
-	if([string]::IsNullOrEmpty($instanceIP)){            
-   		Write-Logger "Your parameter is NULL or EMPTY."
+	if($instanceIP -eq "0.0.0.0"){ 
 		$divisor = 0
     		[int]$a = 1/$divisor
 	} else {            
@@ -36,7 +35,7 @@ try{
 	Write-Host "Task ID $taskId"
 	Write-Logger "Completed."
 }catch{
-	$ErrorMessage = "You have not provided Instance IP"
+	$ErrorMessage = "You configured a wrong Instance IP"
 	Write-Logger "Error occured in the powershell_test_bot : $ErrorMessage" "ERROR"
 }
 
