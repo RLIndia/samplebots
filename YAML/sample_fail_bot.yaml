@@ -54,7 +54,7 @@ execution:
   - 
     os: windows
     stage: script
-    entrypoint: sample_fail_bot.ps1
+    entrypoint: sample_fail_bot.py
     param: ${instanceIP} ${sysid} ${task} ${snowUrl} ${snowUserName} ${snowPassword}
     type: powershell
 
