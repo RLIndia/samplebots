@@ -12,7 +12,7 @@ functionality: Service Management
 action: run
 
 ## Type ->  Chef, Script, UI, etc...
-type: test
+type: script
 ## Manual Execution Time is in Minutes.
 manualExecutionTime: 5
 ## Sample input form
