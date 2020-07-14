@@ -28,27 +28,27 @@ input:
     - name: providerType
       label: Provider type 
       type: text
-      default: Github
+      default:
     - name: sysid
       label: Task SysId
       type: text
-      default: 97265bfcdb7d1414c972dda5ca96196s
+      default:
     - name: task
       label: Task Number
       type: text
-      default: TASK0186317
+      default: 
     - name: snowUrl
       label: Servicenow Url
       type: text
-      default: https://relevancelabincdemo1.service-now.com
+      default:
     - name: snowUserName
       label: Servicenow UserName
       type: text
-      default: admin
+      default:
     - name: snowPassword
       label: Servicenow Password
       type: password
-      default: Pass@123
+      default:
 
 execution: 
   - 
