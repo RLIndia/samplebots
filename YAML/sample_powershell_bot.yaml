@@ -8,7 +8,7 @@ name: Test BOT Using PowerShell Script
 desc: shows only messages for test purpose.
 
 ## Category -> Check, Run, Meta, Predict...
-functionality: Sample
+functionality: Service Management
 action: run
 
 ## Type ->  Chef, Script, UI, etc...
@@ -28,14 +28,34 @@ input:
     - name: instanceIP
       label: Instance IP
       type: text
-      default: 172.168.1.2 
+      default: 172.168.1.2
+    - name: sysid
+      label: Sys ID
+      type: text
+      default:
+    - name: task
+      label: Task ID
+      type: text
+      default:
+    - name: snowUrl
+      label: SNOW URL
+      type: text
+      default:
+    - name: snowUserName
+      label: SNOW Username
+      type: text
+      default:
+    - name: snowPassword
+      label: SNOW Password
+      type: password
+      default:
 
 execution: 
   - 
     os: windows
     stage: script
     entrypoint: sample_powershell_bot.ps1
-    param: ${instanceIP}
+    param: ${instanceIP} ${sysid} ${task} ${snowUrl} ${snowUserName} ${snowPassword}
     type: powershell
 
 output:

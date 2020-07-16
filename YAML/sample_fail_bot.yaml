@@ -1,11 +1,11 @@
-## ID - auto generated or manual alpha numeric, must be unique across RLC
-id: sample_python_bot
+ ## ID - auto generated or manual alpha numeric, must be unique across RLC
+id: sample_fail_bot
 
 ## Name - human readable name (e.g., Install MongoDB, Change JIRA password...)
-name: Test BOT Using Python Script
+name: A sample fail bot for demo
 
 ## Desc - Few line brief about the BOT and its characteristics.
-desc: Test BOT Using Python Script.
+desc: A sample fail bot for demo.
 
 ## Category -> Check, Run, Meta, Predict...
 functionality: Service Management
@@ -14,7 +14,7 @@ action: run
 ## Type ->  Chef, Script, UI, etc...
 type: script
 ## Manual Execution Time is in Minutes.
-manualExecutionTime: 10
+manualExecutionTime: 5
 ## Sample input form
 ##    form    - its form based input
 ##    name    - variable name
@@ -25,42 +25,41 @@ manualExecutionTime: 10
 # None for others
 input:
   - form:
-    - name: providerType
-      label: Provider type 
+    - name: instanceIP
+      label: Instance IP
       type: text
-      default:
+      default: 172.168.1.2
     - name: sysid
-      label: Task SysId
+      label: Sys ID
       type: text
       default:
     - name: task
-      label: Task Number
+      label: Task ID
       type: text
-      default: 
+      default:
     - name: snowUrl
-      label: Servicenow Url
+      label: SNOW URL
       type: text
       default:
     - name: snowUserName
-      label: Servicenow UserName
+      label: SNOW Username
       type: text
       default:
     - name: snowPassword
-      label: Servicenow Password
+      label: SNOW Password
       type: password
       default:
 
 execution: 
   - 
-    os: ubuntu
+    os: windows
     stage: script
-    entrypoint: sample_python_bot.py
-    param: ${providerType} ${sysid} ${task} ${snowUrl} ${snowUserName} ${snowPassword}
-    type: python
+    entrypoint: sample_fail_bot.py
+    param: ${instanceIP} ${sysid} ${task} ${snowUrl} ${snowUserName} ${snowPassword}
+    type: powershell
 
 output:
    logs:
     - stdout
    msgs:
-        text: "Test BOT Using Python Script."
-              
+        text: "shows message for test purpose."
