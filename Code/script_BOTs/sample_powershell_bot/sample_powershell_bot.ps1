@@ -2,6 +2,9 @@ $location="C:\newLogFiles.txt"
 $logfile=[System.IO.Path]::GetFileNameWithoutExtension($MyInvocation.MyCommand.Name)
 $instanceIP = $args[0]
 $taskId = $args[1]
+$snbotuser = $args[2]
+$botsnpass = $args[4]
+$sninstance = $args[3]
 
 function Write-Logger{
     [CmdletBinding()]
@@ -34,6 +37,12 @@ try{
 	Write-Host "Hello,This is powershell Bot for test purpose and this is the parameter $instanceIP"
 	Write-Host "Task ID $taskId"
 	Write-Logger "Completed."
+	Write-Logger "Connecting to SNOW"
+	#Importing servicenow functions
+	. (Join-Path $PSScriptRoot "lib-servicenow.ps1")
+	$pass = ConvertTo-SecureString -AsPlainText -Force $botsnpass
+	$sapi = [ServiceNowApi]::new($snbotuser,$pass,$sninstance)
+	$resp2 = $sapi.UpdateServiceNowTask($taskId,"3","Close the ticket",$null,$null,$null)
 }catch{
 	$ErrorMessage = "You configured a wrong Instance IP"
 	Write-Logger "Error occured in the powershell_test_bot : $ErrorMessage" "ERROR"
