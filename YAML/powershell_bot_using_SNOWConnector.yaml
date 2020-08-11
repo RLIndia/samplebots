@@ -1,11 +1,11 @@
- ## ID - auto generated or manual alpha numeric, must be unique across RLC
-id: sample_powershell_bot
+## ID - auto generated or manual alphanumeric, must be unique across RLC
+id: powershell_bot_using_SNOWConnector
 
 ## Name - human readable name (e.g., Install MongoDB, Change JIRA password...)
-name: Test BOT Using PowerShell Script
+name: PowerShell Script Using SNOWConnector
 
-## Desc - Few line brief about the BOT and its characteristics.
-desc: shows only messages for test purpose.
+## Desc - Few lines brief about the BOT and its characteristics.
+desc: Shows only messages for test purpose.
 
 ## Category -> Check, Run, Meta, Predict...
 functionality: Service Management
@@ -62,4 +62,5 @@ output:
    logs:
     - stdout
    msgs:
-        text: "shows message for test purpose."
+        text: "Powershell Script BOT uses ServiceNow Connector for execution."
+

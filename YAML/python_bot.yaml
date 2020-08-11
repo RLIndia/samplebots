@@ -1,8 +1,7 @@
- ## ID - auto generated or manual alpha numeric, must be unique across RLC
-id: sample_bash_test_bot
-
+## ID - auto generated or manual alpha numeric, must be unique across RLC
+id: python_bot
 ## Name - human readable name (e.g., Install MongoDB, Change JIRA password...)
-name: sample bash test bot
+name: Python Test BOT - Sample
 
 ## Desc - Few line brief about the BOT and its characteristics.
 desc: shows only messages for test purpose.
@@ -34,12 +33,12 @@ execution:
   - 
     os: ubuntu
     stage: script
-    entrypoint: sample_bash_test_bot.sh
+    entrypoint: python_bot.py
     param: ${instanceIP}
-    type: bash
+    type: python
 
 output:
    logs:
     - stdout
    msgs:
-        text: "shows messges for test purpose."
+        text: "User python bot executed successfully."

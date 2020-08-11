@@ -1,14 +1,13 @@
- ## ID - auto generated or manual alpha numeric, must be unique across RLC
-id: sample_bash_bot
+## ID - auto generated or manual alpha numeric, must be unique across RLC
+id: powershell_bot
 
 ## Name - human readable name (e.g., Install MongoDB, Change JIRA password...)
-name: Test BOT Using Shell Script
-
+name: Powershell Test BOT - Sample
 ## Desc - Few line brief about the BOT and its characteristics.
 desc: shows only messages for test purpose.
 
 ## Category -> Check, Run, Meta, Predict...
-functionality: Sample
+functionality: Service Management
 action: run
 
 ## Type ->  Chef, Script, UI, etc...
@@ -32,14 +31,14 @@ input:
 
 execution: 
   - 
-    os: ubuntu
+    os: windows
     stage: script
-    entrypoint: sample_bash_bot.sh
+    entrypoint: powershell_bot.ps1
     param: ${instanceIP}
-    type: bash
+    type: powershell
 
 output:
    logs:
     - stdout
    msgs:
-        text: "shows message for test purpose."
+        text: "User powershell bot executed successfully."

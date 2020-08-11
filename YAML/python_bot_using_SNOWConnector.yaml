@@ -1,11 +1,11 @@
-## ID - auto generated or manual alpha numeric, must be unique across RLC
-id: sample_python_bot
+## ID - auto generated or manual alphanumeric, must be unique across RLC
+id: python_bot_using_SNOWConnector
 
 ## Name - human readable name (e.g., Install MongoDB, Change JIRA password...)
-name: Test BOT Using Python Script
+name: Python Script using SNOW Connector
 
-## Desc - Few line brief about the BOT and its characteristics.
-desc: Test BOT Using Python Script.
+## Desc - Few lines brief about the BOT and its characteristics.
+desc: Python Script using SNOW Connector
 
 ## Category -> Check, Run, Meta, Predict...
 functionality: Service Management
@@ -62,5 +62,5 @@ output:
    logs:
     - stdout
    msgs:
-        text: "Test BOT Using Python Script."
-              
+        text: "Python Script BOT uses ServiceNow Connector for execution."
+
