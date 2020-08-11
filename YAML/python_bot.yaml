@@ -41,4 +41,4 @@ output:
    logs:
     - stdout
    msgs:
-        text: "User python bot executed successfully."
+        text: " Python Script BOT is successfully executed."
