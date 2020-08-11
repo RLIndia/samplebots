@@ -1,5 +1,5 @@
 ## ID - auto generated or manual alpha numeric, must be unique across RLC
-id: bashbot
+id: bash_bot
 
 ## Name - human readable name (e.g., Install MongoDB, Change JIRA password...)
 name: Bash Test BOT - Sample 
