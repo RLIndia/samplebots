@@ -42,4 +42,4 @@ output:
    logs:
     - stdout
    msgs:
-        text: "User sample bot is successfully executed"
+        text: "Bash Script BOT is successfully executed."
