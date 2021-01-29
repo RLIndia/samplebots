@@ -31,4 +31,4 @@ if __name__ == "__main__":
     snowUserName = sys.argv[5]
     snowPassword = sys.argv[6] 
     time.sleep(60)
-    updateTask(snowUrl, snowUserName, snowPassword, sysid,"3","Test BOT using python script successfully executed")
+    updateTask(snowUrl, snowUserName, snowPassword, sysid,"3","Python Script using SNOW Connector bot successfully executed")
